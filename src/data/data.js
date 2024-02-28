@@ -1,3 +1,8 @@
+import service1 from "../assets/service1.png";
+import service2 from "../assets/service2.png";
+import service3 from "../assets/service3.png";
+import service4 from "../assets/service4.png";
+
 export const data = [
     {
     id:1,
@@ -82,7 +87,7 @@ export const data = [
     },
     {
         id:10,
-        image:"",
+        image:"https://shorturl.at/HNXY5",
         name:" Lake Bunyoyi, Uganda",
         description:"Visitors always complain about value for money when it comes to accommodation but one of the places in Uganda where visitors have come to appreciate their value for money is Lake Bunyonyi.",
         pricing:"US$30 per night(two adults)",
@@ -90,3 +95,58 @@ export const data = [
         hotel:"Eagle Peak homestay"
     }
 ]
+
+export const users = [
+    {
+        id:1,
+        name:"Nicolas Cage",
+        email:"nicolascage@gmail.com",
+        image:"https://shorturl.at/BDEQ9",
+        role:"CEO of Fastinfo",
+        experience:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate asperiores eaque."
+
+    },
+    {
+        id:2,
+        name:"Ibikoraneza Diox",
+        email:"ibikoranezadiox@gmail.com",
+        image:"https://shorturl.at/dlopU",
+        role:"An Engineer",
+        experience:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate asperiores eaque."
+    },
+    {
+        id:3,
+        name:"Aimable Stones",
+        email:"aimablestones123@gmail.com",
+        image:"https://shorturl.at/ftxK8",
+        role:"Youtube Vloger",
+        experience:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate asperiores eaque."
+    }
+]
+
+export const services = [
+    {
+      icon: service1,
+      title: "Get Best Prices",
+      subTitle:
+        "Pay through our application and save thousands and get amazing rewards.",
+    },
+    {
+      icon: service2,
+      title: "Diseases Safe",
+      subTitle:
+        "We have all the curated hotels that have all the precaution for a covid safe environment.",
+    },
+    {
+      icon: service3,
+      title: "Flexible Payment",
+      subTitle:
+        "Enjoy the flexible payment through our app and get rewards on every payment.",
+    },
+    {
+      icon: service4,
+      title: "Find The Best Near You",
+      subTitle:
+        "Find the best hotels and places to visit near you in a single click.",
+    },
+  ];
