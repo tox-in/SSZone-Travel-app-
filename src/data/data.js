@@ -150,3 +150,22 @@ export const services = [
         "Find the best hotels and places to visit near you in a single click.",
     },
   ];
+
+  export const recommend = [
+    {
+        id:1,
+        type:"cities"
+    },
+    {
+        id:2,
+        type:"Beaches"
+    },
+    {
+        id:3,
+        type:"farmlands"
+    },
+    {
+        id:4,
+      type:"gardens"
+    },
+  ];
