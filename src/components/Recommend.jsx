@@ -1,20 +1,13 @@
-import { data as destinationData } from "../data/data";
-import {React, useState} from 'react';
+import React, { useState } from "react";
+import info1 from "../assets/info1.png";
+import info2 from "../assets/info2.png";
+import info3 from "../assets/info3.png";
+
+// Import the data
+import { data } from "../data/data";
 
 export default function Recommend() {
-  const destinations = [
-    {
-      destinationData
-    },
-  ];
-
-  const packages = [
-    "The Weekend Break",
-    "The Package Holiday",
-    "The Group Tour",
-    "Long Term Slow Travel",
-  ];
-
+  // State to manage active package
   const [active, setActive] = useState(1);
 
   return (
@@ -22,40 +15,50 @@ export default function Recommend() {
       <div className="text-center">
         <h2 className="text-3xl font-bold mb-4">Recommended Destinations</h2>
       </div>
+      {/* Display the list of packages */}
       <div className="flex justify-center mb-4">
         <ul className="flex">
-          {packages.map((pkg, index) => (
+          {data.map((destination, index) => (
             <li
               key={index}
-              onClick={() => setActive(index + 1)}
+              onClick={() => setActive(destination.id)}
               className={`px-4 py-2 cursor-pointer ${
-                active === index + 1 ? "border-b-2 border-purple-600" : ""
+                active === destination.id ? "border-b-2 border-purple-600" : ""
               }`}
             >
-              {pkg}
+              {destination.name}
             </li>
           ))}
         </ul>
       </div>
+      {/* Display the grid of destinations */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {destinations.map((destination, index) => (
+        {data.map((destination) => (
           <div
-            key={index}
+            key={destination.id}
             className="p-4 rounded-xl shadow-md transition-transform hover:scale-105"
           >
-            <img src={destination.image} alt="" className="w-full mb-4" />
-            <h3 className="text-xl font-semibold mb-2">{destination.title}</h3>
-            <p className="text-gray-600 mb-4">{destination.subTitle}</p>
+            {/* Display destination image */}
+            {destination.image && (
+              <img src={destination.image} alt={destination.name} className="w-full mb-4" />
+            )}
+            {/* Display destination name */}
+            <h3 className="text-xl font-semibold mb-2">{destination.name}</h3>
+            {/* Display destination description */}
+            <p className="text-gray-600 mb-4">{destination.description}</p>
             <div className="flex justify-between items-center mb-4">
+              {/* Display icons */}
               <div className="flex gap-1">
-                <img src={destinationData.image} alt="" className="w-6 h-6 rounded-full" />
-                <img src={destinationData.image} alt="" className="w-6 h-6 rounded-full" />
-                <img src={destinationData.image} alt="" className="w-6 h-6 rounded-full" />
+                <img src={info1} alt="" className="w-6 h-6 rounded-full" />
+                <img src={info2} alt="" className="w-6 h-6 rounded-full" />
+                <img src={info3} alt="" className="w-6 h-6 rounded-full" />
               </div>
-              <h4 className="text-lg font-semibold">{destination.cost}</h4>
+              {/* Display destination pricing */}
+              <h4 className="text-lg font-semibold">{destination.pricing}</h4>
             </div>
+            {/* Display distance and duration */}
             <div className="flex justify-between text-gray-600">
-              <span>1000 Kms</span>
+              <span>{destination.distance}</span>
               <span>{destination.duration}</span>
             </div>
           </div>
