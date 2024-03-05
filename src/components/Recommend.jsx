@@ -5,6 +5,7 @@ import info3 from "../assets/info3.png";
 
 // Import the data
 import { data } from "../data/data";
+import { recommend } from "../data/data";
 
 export default function Recommend() {
   // State to manage active package
@@ -16,17 +17,17 @@ export default function Recommend() {
         <h2 className="text-3xl font-bold mb-4">Recommended Destinations</h2>
       </div>
       {/* Display the list of packages */}
-      <div className="flex justify-center mb-4">
-        <ul className="flex">
-          {data.map((destination, index) => (
+      <div className="flex w-full  mb-4">
+        <ul className="flex w-full justify-between">
+          {recommend.map((destination, index) => (
             <li
               key={index}
               onClick={() => setActive(destination.id)}
-              className={`px-4 py-2 cursor-pointer ${
+              className={`px-4 py-2 cursor-pointer text-xl flex  font-bold mb-4 ${
                 active === destination.id ? "border-b-2 border-purple-600" : ""
               }`}
             >
-              {destination.name}
+              {destination.type}
             </li>
           ))}
         </ul>
