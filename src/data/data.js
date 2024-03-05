@@ -90,7 +90,7 @@ export const data = [
         image:"https://shorturl.at/HNXY5",
         name:" Lake Bunyoyi, Uganda",
         description:"Visitors always complain about value for money when it comes to accommodation but one of the places in Uganda where visitors have come to appreciate their value for money is Lake Bunyonyi.",
-        pricing:"US$30 per night(two adults)",
+        pricing:"$30 per night(two adults)",
         distance:"79.4 km from Kigali International Airport",
         hotel:"Eagle Peak homestay"
     }
